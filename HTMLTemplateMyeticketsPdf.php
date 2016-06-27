@@ -41,7 +41,6 @@ class HTMLTemplateMyeticketsPdf extends HTMLTemplate
         $this->smarty = $smarty;
 
         // header informations
-        $id_lang = Context::getContext()->language->id;
         $this->title = HTMLTemplateMyeticketsPdf::l('Custom Title');
         // footer informations
         $this->shop = new Shop(Context::getContext()->shop->id);
