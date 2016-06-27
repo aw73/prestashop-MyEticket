@@ -23,7 +23,7 @@
 *  International Registered Trademark & Property of PrestaShop SA
 *}
 <div class="tab-pane" id="etickets">
-  <h4 class="visible-print">{l s='E-tickets' mod='myetickets'} <span class="badge">{$etickets|@count}</span></h4>
+  <h4 class="visible-print">{l s='E-tickets' mod='myetickets'} <span class="badge">{$etickets|escape:'htmlall':'UTF-8'|@count}</span></h4>
 
   <div class="table-responsive">
   	<table class="table" id="documents_table">
@@ -47,7 +47,7 @@
   		<tbody>
   			{foreach from=$etickets item=Eticket}
           <tr>
-            <td><a href="{$link->getAdminLink('AdminMyetickets')|escape:'htmlall':'UTF-8'}&submitMyeticketsSearch&ean13={$Eticket->ean13}">{$Eticket->ean13}</a></td>
+            <td><a href="{$link->getAdminLink('AdminMyetickets')|escape:'htmlall':'UTF-8'}&submitMyeticketsSearch&ean13={$Eticket->ean13|escape:'htmlall':'UTF-8'}">{$Eticket->ean13|escape:'htmlall':'UTF-8'}</a></td>
             <td>{$Eticket->product_name|escape:'htmlall':'UTF-8'}</td>
             <td>
               {l s='For' mod='myetickets'}

@@ -58,6 +58,6 @@
   </div>
 </div>
 <script type="text/javascript">
-hideOtherLanguage({$default_form_language});
+hideOtherLanguage({$default_form_language|escape:'htmlall':'UTF-8'});
 var missing_product_name = '{l s='Please fill product name input field' mod='myetickets' js=1}';
 </script>

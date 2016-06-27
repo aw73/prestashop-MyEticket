@@ -23,11 +23,11 @@
 *  International Registered Trademark & Property of PrestaShop SA
 *}
 <div class="panel">
-	<h3><i class="icon icon-ticket"></i> {l s='My E-tickets' mod='myetickets'} <span class="badge">{$etickets|@count}</span></h3>
+	<h3><i class="icon icon-ticket"></i> {l s='My E-tickets' mod='myetickets'} <span class="badge">{$etickets|escape:'htmlall':'UTF-8'|@count}</span></h3>
 	<div class="row">
 		{foreach from=$etickets item=Eticket}
 		<form method="post" action="{$link->getAdminLink('AdminMyetickets')|escape:'htmlall':'UTF-8'}">
-			<input type="hidden" name="id_myetickets" value="{$Eticket->id}">
+			<input type="hidden" name="id_myetickets" value="{$Eticket->id|escape:'htmlall':'UTF-8'}">
 			<div class="col-md-4">
 				<div class="panel panel-default">
 					<div class="panel-body">
@@ -46,7 +46,6 @@
 								</span>
 							{/if}
 						</h3>
-						<!-- <div>{$Eticket->ean13}</div> -->
 						<div>
 							<strong>
 								{l s='For' mod='myetickets'}
@@ -69,7 +68,7 @@
 							</button>
 						</p>
 						<p>
-							<a href="{$link->getAdminLink('AdminOrders')|escape:'htmlall':'UTF-8'}&id_order={$Eticket->id_order}&vieworder">
+							<a href="{$link->getAdminLink('AdminOrders')|escape:'htmlall':'UTF-8'}&id_order={$Eticket->id_order|escape:'htmlall':'UTF-8'}&vieworder">
 								{l s='View related order' mod='myetickets'}
 							</a>
 						</p>

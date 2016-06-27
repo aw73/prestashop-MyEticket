@@ -26,7 +26,7 @@
 	<a href="{$link->getPageLink('my-account', true)|escape:'html':'UTF-8'}">
 		{l s='My account' mod='myetickets'}
 	</a>
-	<span class="navigation-pipe">{$navigationPipe}</span>
+	<span class="navigation-pipe">{$navigationPipe|escape:'htmlall':'UTF-8'}</span>
 	<span class="navigation_page">{l s='E-tickets history' mod='myetickets'}</span>
 {/capture}
 {include file="$tpl_dir./errors.tpl"}
