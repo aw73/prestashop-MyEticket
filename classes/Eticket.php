@@ -162,8 +162,8 @@ class Eticket extends ObjectModel
         $evalProductAttribute = str_pad("$id_product_attribute", 2, '0', STR_PAD_LEFT);
 
         // Trunc if attributes too long
-        if (strlen($evalProductAttribute) > 2) {
-            $evalProductAttribute = substr($evalProductAttribute, -2);
+        if (Tools::strlen($evalProductAttribute) > 2) {
+            $evalProductAttribute = Tools::substr($evalProductAttribute, -2);
         }
 
         // Concat the terminal part of the code
