@@ -62,7 +62,8 @@ class AdminMyeticketsController extends ModuleAdminController
     {
         $_content = $this->renderSearchForm();
         if (Tools::isSubmit('submitMyeticketsSearch')) {
-            $_content .= $this->context->smarty->fetch(_PS_MODULE_DIR_ . 'myetickets/views/templates/admin/searchResults.tpl');
+            $_templatePath = 'myetickets/views/templates/admin/searchResults.tpl';
+            $_content .= $this->context->smarty->fetch(_PS_MODULE_DIR_ . $_templatePath);
         }
         $this->context->smarty->assign('content', $_content);
         parent::display();
@@ -140,7 +141,8 @@ class AdminMyeticketsController extends ModuleAdminController
             $Eticket->checked = 1;
             $Eticket->check_date = date("Y-m-d");
             $Eticket->update();
-            Tools::redirectAdmin($this->context->link->getAdminLink('AdminMyetickets').'&submitMyeticketsSearch&ean13='.$Eticket->ean13);
+            $_linkParams = '&submitMyeticketsSearch&ean13='.$Eticket->ean13;
+            Tools::redirectAdmin($this->context->link->getAdminLink('AdminMyetickets').$linkParams);
         }
     }
 

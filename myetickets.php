@@ -24,18 +24,18 @@
 *  International Registered Trademark & Property of PrestaShop SA
 */
 
-if (!defined('_PS_VERSION_')) {
-    exit;
-}
-
 include_once dirname(__FILE__).'/classes/Eticket.php';
 
-class myetickets extends Module
+class myEtickets extends Module
 {
     protected $config_form = false;
 
     public function __construct()
     {
+        if (!defined('_PS_VERSION_')) {
+            exit;
+        }
+
         $this->name = 'myetickets';
         $this->tab = 'administration';
         $this->version = '1.3.0';
@@ -251,7 +251,7 @@ class myetickets extends Module
         foreach ($products as $product) {
             if ($params['newOrderStatus']->paid && Eticket::isEticketProduct($product['id_product'])) {
                 // Add new ticket
-          $Eticket = new Eticket();
+                $Eticket = new Eticket();
                 $Eticket->ean13 = Eticket::calculateEan13($params['id_order'], $product['id_product'], $product['id_product_attribute']);
                 $Eticket->id_product = $product['id_product'];
                 $Eticket->id_order = $params['id_order'];
@@ -274,7 +274,7 @@ class myetickets extends Module
                 $_add_count++;
             } else {
                 // Delete existing tickets
-          $Eticket = new Eticket(Eticket::getIdFromOrderProductProductAttributes($params['id_order'], $product['id_product'], $product['id_product_attribute']));
+                $Eticket = new Eticket(Eticket::getIdFromOrderProductProductAttributes($params['id_order'], $product['id_product'], $product['id_product_attribute']));
                 $Eticket->delete();
                 $_delete_count++;
             }
@@ -292,8 +292,8 @@ class myetickets extends Module
         $_etickets = Eticket::getEticketsFromIds(Eticket::getIdsFromOrder($params['order']->id));
         if ($_etickets) {
             $this->context->smarty->assign(array(
-          'etickets' => $_etickets
-        ));
+                'etickets' => $_etickets
+            ));
             return $this->display(__FILE__, 'adminOrderContentOrder.tpl');
         }
     }
@@ -316,14 +316,14 @@ class myetickets extends Module
     public function hookDisplayAdminProductsExtra()
     {
         $this->context->smarty->assign(
-      array(
-        'my_module_name' => Configuration::get('MYMODULE_NAME'),
-        'my_module_link' => $this->context->link->getModuleLink('myetickets', 'display'),
-        'is_eticket' => Eticket::isEticketProduct((int)Tools::getValue('id_product')),
-        'languages' => $this->context->controller->_languages,
-        'default_form_language' => (int)Configuration::get('PS_LANG_DEFAULT')
-        )
-      );
+            array(
+                'my_module_name' => Configuration::get('MYMODULE_NAME'),
+                'my_module_link' => $this->context->link->getModuleLink('myetickets', 'display'),
+                'is_eticket' => Eticket::isEticketProduct((int)Tools::getValue('id_product')),
+                'languages' => $this->context->controller->_languages,
+                'default_form_language' => (int)Configuration::get('PS_LANG_DEFAULT')
+            )
+        );
         return $this->display(__FILE__, 'adminProductExtra.tpl');
     }
 
@@ -343,11 +343,11 @@ class myetickets extends Module
     public function hookDisplayCustomerAccount($params)
     {
         $this->context->smarty->assign(
-      array(
-        'id_customer' => $this->context->customer->id,
-        'default_form_language' => (int)Configuration::get('PS_LANG_DEFAULT')
-        )
-      );
+            array(
+                'id_customer' => $this->context->customer->id,
+                'default_form_language' => (int)Configuration::get('PS_LANG_DEFAULT')
+            )
+        );
         return $this->display(__FILE__, 'displayCustomerAccount.tpl');
     }
 }

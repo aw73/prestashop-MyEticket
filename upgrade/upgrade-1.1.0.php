@@ -24,10 +24,6 @@
 *  International Registered Trademark & Property of PrestaShop SA
 */
 
-if (!defined('_PS_VERSION_')) {
-    exit;
-}
-
 /**
  * This function updates your module from previous versions to the version 1.1,
  * usefull when you modify your database, or register a new hook ...

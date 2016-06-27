@@ -24,7 +24,7 @@
 *  International Registered Trademark & Property of PrestaShop SA
 */
 
-class myeticketsHistoryModuleFrontController extends ModuleFrontController
+class myEticketsHistoryModuleFrontController extends ModuleFrontController
 {
     public $auth = true;
     public $authRedirection = 'my-acount';
@@ -33,7 +33,7 @@ class myeticketsHistoryModuleFrontController extends ModuleFrontController
     public function init()
     {
         $this->page_name = 'history'; // page_name and body id
-      $this->display_column_left = false;
+        $this->display_column_left = false;
         $this->display_column_right = false;
 
         if (Tools::getIsset('submitMyeticketsPdf')) {
@@ -54,7 +54,7 @@ class myeticketsHistoryModuleFrontController extends ModuleFrontController
         }
         $this->context->smarty->assign(array(
           'etickets' => $myEtickets,
-      ));
+        ));
 
         $this->setTemplate('history.tpl');
     }
@@ -66,14 +66,14 @@ class myeticketsHistoryModuleFrontController extends ModuleFrontController
 
         if ($idMyeticket = (int)Tools::getValue('id_myetickets')) {
             $Eticket = new Eticket($idMyeticket);
-      // Protect free download
-      // Control that current connected user is customer to this e-ticket
-      if ($this->context->customer->id == $Eticket->id_customer) {
-          $pdf = new PDF($Eticket, 'MyeticketsPdf', Context::getContext()->smarty);
-          $pdf->render();
-      } else {
-          $this->errors[] = $this->module->l("You cannot download this e-ticket: it is not yours !");
-      }
+            // Protect free download
+            // Control that current connected user is customer to this e-ticket
+            if ($this->context->customer->id == $Eticket->id_customer) {
+                $pdf = new PDF($Eticket, 'MyeticketsPdf', Context::getContext()->smarty);
+                $pdf->render();
+            } else {
+                $this->errors[] = $this->module->l("You cannot download this e-ticket: it is not yours !");
+            }
         }
     }
 }

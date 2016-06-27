@@ -83,7 +83,10 @@ class Eticket extends ObjectModel
         $query = new DbQuery();
         $query->select('id_myetickets');
         $query->from('myetickets', 'ticket');
-        $query->where('`id_order` = '.(int) $id_order.' AND `id_product` = '.(int) $id_product.' AND `id_product_attribute` = '.(int) $id_product_attribute);
+        $where = '`id_order` = '.(int) $id_order;
+        $where .= ' AND `id_product` = '.(int) $id_product;
+        $where .=  'AND `id_product_attribute` = '.(int) $id_product_attribute;
+        $query->where($where);
 
         return (int) Db::getInstance()->getValue($query);
     }
@@ -138,7 +141,8 @@ class Eticket extends ObjectModel
 
     public static function isEticketProduct($id_product)
     {
-        $result = Db::getInstance()->ExecuteS('SELECT is_eticket FROM '._DB_PREFIX_.'product WHERE id_product = '.(int) $id_product);
+        $query = 'SELECT is_eticket FROM '._DB_PREFIX_.'product WHERE id_product = '.(int) $id_product;
+        $result = Db::getInstance()->ExecuteS($query);
 
         if (!empty($result)) {
             $return = $result[0]['is_eticket'];
@@ -186,7 +190,8 @@ class Eticket extends ObjectModel
 
     public static function isEan13Used($ean13Code)
     {
-        $result = Db::getInstance()->ExecuteS('SELECT ean13 FROM '._DB_PREFIX_.'myetickets WHERE ean13 = '.$ean13Code);
+        $query = 'SELECT ean13 FROM '._DB_PREFIX_.'myetickets WHERE ean13 = '.$ean13Code;
+        $result = Db::getInstance()->ExecuteS($query);
 
         return !empty($result);
     }
@@ -202,7 +207,8 @@ class Eticket extends ObjectModel
             $y = 50;  // barcode center
             $height = 75;   // barcode height in 1D ; module size in 2D
             $width = 2;    // barcode height in 1D ; not use in 2D
-            $angle = 0;   // rotation in degrees : nb : non horizontable barcode might not be usable because of pixelisation
+            $angle = 0;   // rotation in degrees : nb : non horizontable
+                          // barcode might not be usable because of pixelisation
 
             $img = imagecreatetruecolor(250, 100);
             $black = ImageColorAllocate($img, 0x00, 0x00, 0x00);
