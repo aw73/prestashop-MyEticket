@@ -24,7 +24,7 @@
 *}
 <div id="product-eticket" class="panel product-tab">
   <input type="hidden" name="submitted_tabs[]" value="Etickets" />
-  <h3 class="tab"> <i class="icon-ticket"></i> {l s='E-ticket'}</h3>
+  <h3 class="tab"> <i class="icon-ticket"></i> {l s='E-ticket' mod='myetickets'}</h3>
 
 
   {* status informations *}
@@ -35,29 +35,29 @@
       </span>
     </div>
     <label class="control-label col-lg-2">
-      {l s='Enabled'}
+      {l s='Enabled' mod='myetickets'}
     </label>
     <div class="col-lg-9">
       <span class="switch prestashop-switch fixed-width-lg">
         <input onclick="toggleDraftWarning(false);" type="radio" name="is_eticket" id="eticket_on" value="1" {if $is_eticket}checked="checked" {/if} />
         <label for="eticket_on" class="radioCheck">
-          {l s='Yes'}
+          {l s='Yes' mod='myetickets'}
         </label>
         <input onclick="toggleDraftWarning(true);"  type="radio" name="is_eticket" id="eticket_off" value="0" {if !$is_eticket}checked="checked"{/if} />
         <label for="eticket_off" class="radioCheck">
-          {l s='No'}
+          {l s='No' mod='myetickets'}
         </label>
         <a class="slide-button btn"></a>
       </span>
     </div>
   </div>
   <div class="panel-footer">
-    <a href="{$link->getAdminLink('AdminProducts')|escape:'html':'UTF-8'}{if isset($smarty.request.page) && $smarty.request.page > 1}&amp;submitFilterproduct={$smarty.request.page|intval}{/if}" class="btn btn-default"><i class="process-icon-cancel"></i> {l s='Cancel'}</a>
-    <button type="submit" name="submitAddproduct" class="btn btn-default pull-right" disabled="disabled"><i class="process-icon-loading"></i> {l s='Save'}</button>
-    <button type="submit" name="submitAddproductAndStay" class="btn btn-default pull-right" disabled="disabled"><i class="process-icon-loading"></i> {l s='Save and stay'}</button>
+    <a href="{$link->getAdminLink('AdminProducts')|escape:'html':'UTF-8'}{if isset($smarty.request.page) && $smarty.request.page > 1}&amp;submitFilterproduct={$smarty.request.page|intval}{/if}" class="btn btn-default"><i class="process-icon-cancel"></i> {l s='Cancel' mod='myetickets'}</a>
+    <button type="submit" name="submitAddproduct" class="btn btn-default pull-right" disabled="disabled"><i class="process-icon-loading"></i> {l s='Save' mod='myetickets'}</button>
+    <button type="submit" name="submitAddproductAndStay" class="btn btn-default pull-right" disabled="disabled"><i class="process-icon-loading"></i> {l s='Save and stay' mod='myetickets'}</button>
   </div>
 </div>
 <script type="text/javascript">
 hideOtherLanguage({$default_form_language});
-var missing_product_name = '{l s='Please fill product name input field' js=1}';
+var missing_product_name = '{l s='Please fill product name input field' mod='myetickets' js=1}';
 </script>

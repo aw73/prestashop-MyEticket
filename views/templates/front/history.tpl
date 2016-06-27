@@ -24,7 +24,7 @@
 *}
 {capture name=path}
 	<a href="{$link->getPageLink('my-account', true)|escape:'html':'UTF-8'}">
-		{l s='My account'}
+		{l s='My account' mod='myetickets'}
 	</a>
 	<span class="navigation-pipe">{$navigationPipe}</span>
 	<span class="navigation_page">{l s='E-tickets history' mod='myetickets'}</span>
@@ -86,13 +86,13 @@
 	<li>
 		<a class="btn btn-default button button-small" href="{$link->getPageLink('my-account', true)|escape:'html':'UTF-8'}">
 			<span>
-				<i class="icon-chevron-left"></i> {l s='Back to Your Account'}
+				<i class="icon-chevron-left"></i> {l s='Back to Your Account' mod='myetickets'}
 			</span>
 		</a>
 	</li>
 	<li>
 		<a class="btn btn-default button button-small" href="{$base_dir}">
-			<span><i class="icon-chevron-left"></i> {l s='Home'}</span>
+			<span><i class="icon-chevron-left"></i> {l s='Home' mod='myetickets'}</span>
 		</a>
 	</li>
 </ul>
