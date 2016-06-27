@@ -23,7 +23,7 @@
 *  International Registered Trademark & Property of PrestaShop SA
 *}
 <li>
-  <a href="{$link->getModuleLink('myetickets', 'history')}" title="Informations">
+  <a href="{$link->getModuleLink('myetickets', 'history')|escape:'htmlall':'UTF-8'}" title="Informations">
     <i class="icon-ticket"></i>
     <span>{l s='E-tickets history' mod='myetickets'}</span>
   </a>

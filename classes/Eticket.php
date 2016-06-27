@@ -1,6 +1,6 @@
 <?php
 /**
-* 2007-2015 PrestaShop
+* 2007-2015 PrestaShop.
 *
 * NOTICE OF LICENSE
 *
@@ -33,7 +33,7 @@ class Eticket extends ObjectModel
     public $id_product_attribute;
     public $id_customer;
     public $check_date; // = "0000-00-00";
-  public $checked;
+    public $checked;
     public $quantity;
     public $product_name;
     public $product_description;
@@ -41,7 +41,7 @@ class Eticket extends ObjectModel
     public $total_wt;
     public $date_paid;
 
-  /**
+    /**
      * @see ObjectModel::$definition
      */
     public static $definition = array(
@@ -74,6 +74,7 @@ class Eticket extends ObjectModel
     {
         $this->validated = 1;
         $this->save();
+
         return true;
     }
 
@@ -82,9 +83,9 @@ class Eticket extends ObjectModel
         $query = new DbQuery();
         $query->select('id_myetickets');
         $query->from('myetickets', 'ticket');
-        $query->where('`id_order` = '.(int)$id_order.' AND `id_product` = '.(int)$id_product.' AND `id_product_attribute` = '.(int)$id_product_attribute);
+        $query->where('`id_order` = '.(int) $id_order.' AND `id_product` = '.(int) $id_product.' AND `id_product_attribute` = '.(int) $id_product_attribute);
 
-        return (int)Db::getInstance()->getValue($query);
+        return (int) Db::getInstance()->getValue($query);
     }
 
     public static function getIdsFromOrder($orderId)
@@ -92,7 +93,7 @@ class Eticket extends ObjectModel
         $query = new DbQuery();
         $query->select('id_myetickets');
         $query->from('myetickets', 'ticket');
-        $query->where('`id_order` = '.(int)$orderId);
+        $query->where('`id_order` = '.(int) $orderId);
 
         return Db::getInstance()->executeS($query);
     }
@@ -102,7 +103,7 @@ class Eticket extends ObjectModel
         $query = new DbQuery();
         $query->select('id_myetickets');
         $query->from('myetickets', 'ticket');
-        $query->where('`id_customer` = '.(int)$customerId);
+        $query->where('`id_customer` = '.(int) $customerId);
 
         return Db::getInstance()->executeS($query);
     }
@@ -126,7 +127,7 @@ class Eticket extends ObjectModel
         $list = array();
         if (!empty($id_array) && is_array($id_array)) {
             foreach ($id_array as $value) {
-                $list[] = new Eticket($value['id_myetickets']);
+                $list[] = new self($value['id_myetickets']);
             }
         } else {
             $list = false;
@@ -137,7 +138,7 @@ class Eticket extends ObjectModel
 
     public static function isEticketProduct($id_product)
     {
-        $result = Db::getInstance()->ExecuteS('SELECT is_eticket FROM '._DB_PREFIX_.'product WHERE id_product = ' . (int)$id_product);
+        $result = Db::getInstance()->ExecuteS('SELECT is_eticket FROM '._DB_PREFIX_.'product WHERE id_product = '.(int) $id_product);
 
         if (!empty($result)) {
             $return = $result[0]['is_eticket'];
@@ -171,8 +172,8 @@ class Eticket extends ObjectModel
 
         // Test if this current EAN13 is already used
         $ean13Begining = 20;
-        while (Eticket::isEan13Used("{$ean13Begining}{$ean13Ending}")) {
-            $ean13Begining++;
+        while (self::isEan13Used("{$ean13Begining}{$ean13Ending}")) {
+            ++$ean13Begining;
         }
 
         // If begining upper than 29 the return error
@@ -192,34 +193,34 @@ class Eticket extends ObjectModel
 
     public static function createBarCode($code, $type)
     {
-        require_once _PS_MODULE_DIR_ . 'myetickets/lib/Barcode.php';
-        $cacheFileName = _PS_CACHE_DIR_."tcpdf/".$type."-".$code.".png";
+        require_once _PS_MODULE_DIR_.'myetickets/lib/Barcode.php';
+        $cacheFileName = _PS_CACHE_DIR_.'tcpdf/'.$type.'-'.$code.'.png';
         if (!file_exists($cacheFileName)) {
-        //$fontSize = 10;   // GD1 in px ; GD2 in point
-        //$marge    = 10;   // between barcode and hri in pixel
-        $x        = 125;  // barcode center
-        $y        = 50;  // barcode center
-        $height   = 75;   // barcode height in 1D ; module size in 2D
-        $width    = 2;    // barcode height in 1D ; not use in 2D
-        $angle    = 0;   // rotation in degrees : nb : non horizontable barcode might not be usable because of pixelisation
+          //$fontSize = 10;   // GD1 in px ; GD2 in point
+          //$marge    = 10;   // between barcode and hri in pixel
+          $x = 125;  // barcode center
+          $y = 50;  // barcode center
+          $height = 75;   // barcode height in 1D ; module size in 2D
+          $width = 2;    // barcode height in 1D ; not use in 2D
+          $angle = 0;   // rotation in degrees : nb : non horizontable barcode might not be usable because of pixelisation
 
-        $img     = imagecreatetruecolor(250, 100);
-            $black  = ImageColorAllocate($img, 0x00, 0x00, 0x00);
-            $white  = ImageColorAllocate($img, 0xff, 0xff, 0xff);
-            //$red    = ImageColorAllocate($img, 0xff, 0x00, 0x00);
-            //$blue   = ImageColorAllocate($img, 0x00, 0x00, 0xff);
-            imagefilledrectangle($img, 0, 0, 300, 300, $white);
+          $img = imagecreatetruecolor(250, 100);
+          $black = ImageColorAllocate($img, 0x00, 0x00, 0x00);
+          $white = ImageColorAllocate($img, 0xff, 0xff, 0xff);
+          //$red    = ImageColorAllocate($img, 0xff, 0x00, 0x00);
+          //$blue   = ImageColorAllocate($img, 0x00, 0x00, 0xff);
+          imagefilledrectangle($img, 0, 0, 300, 300, $white);
 
-            //$data = Barcode::gd($img, $black, $x, $y, $angle, $type, array('code'=>$code), $width, $height);
-            Barcode::gd($img, $black, $x, $y, $angle, $type, array('code'=>$code), $width, $height);
-        //header('Content-type: image/jpg');
-        if (imagepng($img, $cacheFileName)) {
-            return $cacheFileName;
+          //$data = Barcode::gd($img, $black, $x, $y, $angle, $type, array('code'=>$code), $width, $height);
+          Barcode::gd($img, $black, $x, $y, $angle, $type, array('code' => $code), $width, $height);
+          //header('Content-type: image/jpg');
+          if (imagepng($img, $cacheFileName)) {
+              return $cacheFileName;
+          } else {
+              return false;
+          }
         } else {
-            return false;
-        }
-        } else {
-            return $cacheFileName;
+          return $cacheFileName;
         }
     }
 }

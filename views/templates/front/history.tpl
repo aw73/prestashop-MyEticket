@@ -35,14 +35,14 @@
 <div class="block-center" id="block-history">
 	{if $etickets && count($etickets)}
   {foreach from=$etickets item=Eticket}
-  <form method="post" action="{$link->getModuleLink('myetickets', 'history')}">
-    <input type="hidden" name="id_myetickets" value="{$Eticket->id}">
+  <form method="post" action="{$link->getModuleLink('myetickets', 'history')|escape:'htmlall':'UTF-8'}">
+    <input type="hidden" name="id_myetickets" value="{$Eticket->id|escape:'htmlall':'UTF-8'}">
     <div class="col-md-4">
       <div class="panel panel-default">
         <div class="panel-body">
-          <h3>{$Eticket->product_name}</h3>
+          <h3>{$Eticket->product_name|escape:'htmlall':'UTF-8'}</h3>
           <p>
-            {if $Eticket->checked}
+            {if $Eticket->checked|escape:'htmlall':'UTF-8'}
               <span class="label label-danger">
                 <i class="icon-exclamation-sign"></i>
                 {l s='Used on' mod='myetickets'} {dateFormat date=$Eticket->check_date}
@@ -54,11 +54,11 @@
               </span>
             {/if}
           </p>
-          <div>{$Eticket->ean13}</div>
+          <div>{$Eticket->ean13|escape:'htmlall':'UTF-8'}</div>
           <div>
             <strong>
               {l s='For' mod='myetickets'}
-              {$Eticket->quantity}
+              {$Eticket->quantity|escape:'htmlall':'UTF-8'}
               {if $Eticket->quantity > 1 }
                 {l s='Persons' mod='myetickets'}
               {else}
@@ -91,7 +91,7 @@
 		</a>
 	</li>
 	<li>
-		<a class="btn btn-default button button-small" href="{$base_dir}">
+		<a class="btn btn-default button button-small" href="{$base_dir|escape:'htmlall':'UTF-8'}">
 			<span><i class="icon-chevron-left"></i> {l s='Home' mod='myetickets'}</span>
 		</a>
 	</li>

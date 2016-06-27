@@ -26,13 +26,13 @@
 	<h3><i class="icon icon-ticket"></i> {l s='My E-tickets' mod='myetickets'} <span class="badge">{$etickets|@count}</span></h3>
 	<div class="row">
 		{foreach from=$etickets item=Eticket}
-		<form method="post" action="{$link->getAdminLink('AdminMyetickets')}">
+		<form method="post" action="{$link->getAdminLink('AdminMyetickets')|escape:'htmlall':'UTF-8'}">
 			<input type="hidden" name="id_myetickets" value="{$Eticket->id}">
 			<div class="col-md-4">
 				<div class="panel panel-default">
 					<div class="panel-body">
 						<h3>
-							{$Eticket->product_name}
+							{$Eticket->product_name|escape:'htmlall':'UTF-8'}
 							&nbsp;
 							{if $Eticket->checked}
 								<span class="label label-danger">
@@ -50,7 +50,7 @@
 						<div>
 							<strong>
 								{l s='For' mod='myetickets'}
-								{$Eticket->quantity}
+								{$Eticket->quantity|escape:'htmlall':'UTF-8'}
 								{if $Eticket->quantity > 1 }
 									{l s='Persons' mod='myetickets'}
 								{else}
@@ -69,7 +69,7 @@
 							</button>
 						</p>
 						<p>
-							<a href="{$link->getAdminLink('AdminOrders')}&id_order={$Eticket->id_order}&vieworder">
+							<a href="{$link->getAdminLink('AdminOrders')|escape:'htmlall':'UTF-8'}&id_order={$Eticket->id_order}&vieworder">
 								{l s='View related order' mod='myetickets'}
 							</a>
 						</p>

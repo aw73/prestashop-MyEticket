@@ -47,11 +47,11 @@
   		<tbody>
   			{foreach from=$etickets item=Eticket}
           <tr>
-            <td><a href="{$link->getAdminLink('AdminMyetickets')}&submitMyeticketsSearch&ean13={$Eticket->ean13}">{$Eticket->ean13}</a></td>
-            <td>{$Eticket->product_name}</td>
+            <td><a href="{$link->getAdminLink('AdminMyetickets')|escape:'htmlall':'UTF-8'}&submitMyeticketsSearch&ean13={$Eticket->ean13}">{$Eticket->ean13}</a></td>
+            <td>{$Eticket->product_name|escape:'htmlall':'UTF-8'}</td>
             <td>
               {l s='For' mod='myetickets'}
-              {$Eticket->quantity}
+              {$Eticket->quantity|escape:'htmlall':'UTF-8'}
               {if $Eticket->quantity > 1 }
                 {l s='Persons' mod='myetickets'}
               {else}

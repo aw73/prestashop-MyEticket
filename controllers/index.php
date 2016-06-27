@@ -1,4 +1,5 @@
-{*
+<?php
+/**
 * 2007-2015 PrestaShop
 *
 * NOTICE OF LICENSE
@@ -21,9 +22,14 @@
 *  @copyright 2016 Sébastien Rufer
 *  @license   http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
 *  International Registered Trademark & Property of PrestaShop SA
-*}
-<h1>{$Eticket->product_name|escape:'htmlall':'UTF-8'}</h1>
-<h2>{$Eticket->product_attributes|escape:'htmlall':'UTF-8'}</h2>
-<p>{$Eticket->product_description|escape:'htmlall':'UTF-8'}</p>
-<h3>{$Eticket->quantity|escape:'htmlall':'UTF-8'} places</h3>
-<img src="{$barcodeFilePath|escape:'htmlall':'UTF-8'}">
+*/
+
+header('Expires: Mon, 26 Jul 1997 05:00:00 GMT');
+header('Last-Modified: '.gmdate('D, d M Y H:i:s').' GMT');
+
+header('Cache-Control: no-store, no-cache, must-revalidate');
+header('Cache-Control: post-check=0, pre-check=0', false);
+header('Pragma: no-cache');
+
+header('Location: ../');
+exit;
