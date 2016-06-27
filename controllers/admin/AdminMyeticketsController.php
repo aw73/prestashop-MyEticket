@@ -142,7 +142,7 @@ class AdminMyeticketsController extends ModuleAdminController
             $Eticket->check_date = date("Y-m-d");
             $Eticket->update();
             $_linkParams = '&submitMyeticketsSearch&ean13='.$Eticket->ean13;
-            Tools::redirectAdmin($this->context->link->getAdminLink('AdminMyetickets').$linkParams);
+            Tools::redirectAdmin($this->context->link->getAdminLink('AdminMyetickets').$_linkParams);
         }
     }
 

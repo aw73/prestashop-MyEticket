@@ -24,9 +24,7 @@
 *  International Registered Trademark & Property of PrestaShop SA
 */
 
-include_once dirname(__FILE__).'/classes/Eticket.php';
-
-class myEtickets extends Module
+class Myetickets extends Module
 {
     protected $config_form = false;
 
@@ -35,6 +33,8 @@ class myEtickets extends Module
         if (!defined('_PS_VERSION_')) {
             exit;
         }
+
+        include_once dirname(__FILE__).'/classes/Eticket.php';
 
         $this->name = 'myetickets';
         $this->tab = 'administration';

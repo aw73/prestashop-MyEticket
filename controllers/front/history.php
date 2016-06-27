@@ -24,7 +24,7 @@
 *  International Registered Trademark & Property of PrestaShop SA
 */
 
-class myEticketsHistoryModuleFrontController extends ModuleFrontController
+class MyeticketsHistoryModuleFrontController extends ModuleFrontController
 {
     public $auth = true;
     public $authRedirection = 'my-acount';
