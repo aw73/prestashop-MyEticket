@@ -196,31 +196,31 @@ class Eticket extends ObjectModel
         require_once _PS_MODULE_DIR_.'myetickets/lib/Barcode.php';
         $cacheFileName = _PS_CACHE_DIR_.'tcpdf/'.$type.'-'.$code.'.png';
         if (!file_exists($cacheFileName)) {
-          //$fontSize = 10;   // GD1 in px ; GD2 in point
-          //$marge    = 10;   // between barcode and hri in pixel
-          $x = 125;  // barcode center
-          $y = 50;  // barcode center
-          $height = 75;   // barcode height in 1D ; module size in 2D
-          $width = 2;    // barcode height in 1D ; not use in 2D
-          $angle = 0;   // rotation in degrees : nb : non horizontable barcode might not be usable because of pixelisation
+            //$fontSize = 10;   // GD1 in px ; GD2 in point
+            //$marge    = 10;   // between barcode and hri in pixel
+            $x = 125;  // barcode center
+            $y = 50;  // barcode center
+            $height = 75;   // barcode height in 1D ; module size in 2D
+            $width = 2;    // barcode height in 1D ; not use in 2D
+            $angle = 0;   // rotation in degrees : nb : non horizontable barcode might not be usable because of pixelisation
 
-          $img = imagecreatetruecolor(250, 100);
-          $black = ImageColorAllocate($img, 0x00, 0x00, 0x00);
-          $white = ImageColorAllocate($img, 0xff, 0xff, 0xff);
-          //$red    = ImageColorAllocate($img, 0xff, 0x00, 0x00);
-          //$blue   = ImageColorAllocate($img, 0x00, 0x00, 0xff);
-          imagefilledrectangle($img, 0, 0, 300, 300, $white);
+            $img = imagecreatetruecolor(250, 100);
+            $black = ImageColorAllocate($img, 0x00, 0x00, 0x00);
+            $white = ImageColorAllocate($img, 0xff, 0xff, 0xff);
+            //$red    = ImageColorAllocate($img, 0xff, 0x00, 0x00);
+            //$blue   = ImageColorAllocate($img, 0x00, 0x00, 0xff);
+            imagefilledrectangle($img, 0, 0, 300, 300, $white);
 
-          //$data = Barcode::gd($img, $black, $x, $y, $angle, $type, array('code'=>$code), $width, $height);
-          Barcode::gd($img, $black, $x, $y, $angle, $type, array('code' => $code), $width, $height);
-          //header('Content-type: image/jpg');
-          if (imagepng($img, $cacheFileName)) {
-              return $cacheFileName;
-          } else {
-              return false;
-          }
+            //$data = Barcode::gd($img, $black, $x, $y, $angle, $type, array('code'=>$code), $width, $height);
+            Barcode::gd($img, $black, $x, $y, $angle, $type, array('code' => $code), $width, $height);
+            //header('Content-type: image/jpg');
+            if (imagepng($img, $cacheFileName)) {
+                return $cacheFileName;
+            } else {
+                return false;
+            }
         } else {
-          return $cacheFileName;
+            return $cacheFileName;
         }
     }
 }
