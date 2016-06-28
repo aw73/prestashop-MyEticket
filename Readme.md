@@ -18,7 +18,7 @@ Principe de fonctionnement
 ### Le client bénéficie des fonctionnalités suivantes :
 
   - **Commander un billet électronique**. La quantité indique le nombre de personnes à faire figurer sur le billet.
-  - **Consulter l'historique de ces billets électroniques** depuis son compte. Pour chaque billet, il est possible de télécharger le PDF et de savoir s'il a déjà été utilisé.
+  - **Consulter l'historique de ses billets électroniques** depuis son compte. Pour chaque billet, il est possible de télécharger le PDF et de savoir s'il a déjà été utilisé.
 
 Description des interfaces
 --------------------------
