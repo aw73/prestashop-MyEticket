@@ -26,22 +26,22 @@ Description des interfaces
 ### Back-office
 
 #### Installation et configuration
-![Installation](/figures/boModuleList.png "Installation")
-![Configuration](/figures/boModuleConfig.png "Configuration")
+![Installation](/figures/boModuleList.png?raw=true "Installation")
+![Configuration](/figures/boModuleConfig.png?raw=true "Configuration")
 
 #### Définition d'un produit billet électronique
-![Définition d'un produit billet électronique](/figures/boProductEdit.png "Définition d'un produit billet électronique")
+![Définition d'un produit billet électronique](/figures/boProductEdit.png?raw=true "Définition d'un produit billet électronique")
 
 #### Liste des billets électronique d'une commande
-![Liste des billets électronique d'une commande](/figures/boTicketOrder.png "Liste des billets électronique d'une commande")
+![Liste des billets électronique d'une commande](/figures/boTicketOrder.png?raw=true "Liste des billets électronique d'une commande")
 
 #### Recherche à partir du code barre
-![Recherche à partir du code barre](/figures/boEan13Search.png "Recherche à partir du code barre")
+![Recherche à partir du code barre](/figures/boEan13Search.png?raw=true "Recherche à partir du code barre")
 
 ### Font-office
 
 #### Mon compte
-![Mon compte](/figures/foMyAccount.png "Mon compte")
+![Mon compte](/figures/foMyAccount.png?raw=true "Mon compte")
 
 #### Mon compte > Mes billets électroniques
-![Mon compte](/figures/foCustomerETickets.png "Mon compte")
+![Mon compte](/figures/foCustomerETickets.png?raw=true "Mon compte")
