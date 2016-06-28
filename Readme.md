@@ -26,22 +26,22 @@ Description des interfaces
 ### Back-office
 
 #### Installation et configuration
-![Installation](https://github.com/besens/prestashop-MyEticket/blob/master/figures/boModuleList.png "Installation")
-![Configuration](https://github.com/besens/prestashop-MyEticket/blob/master/figures/boModuleConfig.png?raw=true "Configuration")
+![Installation](https://www.dropbox.com/s/timj5vy3yxaln6w/boModuleList.png?dl=0 "Installation")
+![Configuration](https://www.dropbox.com/s/0uuzhguxcbgdfqc/boModuleConfig.png?dl=0 "Configuration")
 
 #### Définition d'un produit billet électronique
-![Définition d'un produit billet électronique](https://github.com/besens/prestashop-MyEticket/blob/master/figures/boProductEdit.png?raw=true "Définition d'un produit billet électronique")
+![Définition d'un produit billet électronique](https://www.dropbox.com/s/kf20bc2ut0dl9wq/boProductEdit.png?dl=0 "Définition d'un produit billet électronique")
 
 #### Liste des billets électronique d'une commande
-![Liste des billets électronique d'une commande](https://github.com/besens/prestashop-MyEticket/blob/master/figures/boTicketOrder.png?raw=true "Liste des billets électronique d'une commande")
+![Liste des billets électronique d'une commande](https://www.dropbox.com/s/xudj7lnutfrykg3/boTicketOrder.png?dl=0 "Liste des billets électronique d'une commande")
 
 #### Recherche à partir du code barre
-![Recherche à partir du code barre](https://github.com/besens/prestashop-MyEticket/blob/master/figures/boEan13Search.png?raw=true "Recherche à partir du code barre")
+![Recherche à partir du code barre](https://www.dropbox.com/s/dzapkoz9q24blxq/boEan13Search.png?dl=0 "Recherche à partir du code barre")
 
 ### Font-office
 
 #### Mon compte
-![Mon compte](https://github.com/besens/prestashop-MyEticket/blob/master/figures/foMyAccount.png?raw=true "Mon compte")
+![Mon compte](https://www.dropbox.com/s/sslnrbyz3vz2m25/foMyAccount.png?dl=0 "Mon compte")
 
 #### Mon compte > Mes billets électroniques
-![Mon compte](https://github.com/besens/prestashop-MyEticket/blob/master/figures/foCustomerETickets.png?raw=true "Mon compte")
+![Mon compte](https://www.dropbox.com/s/uvelvlig5aew178/foCustomerETickets.png?dl=0 "Mon compte")
