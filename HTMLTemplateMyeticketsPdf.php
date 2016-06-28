@@ -59,7 +59,7 @@ class HTMLTemplateMyeticketsPdf extends HTMLTemplate
             'barcodeFilePath' => $barcodeFilePath,
         ));
 
-        return $this->smarty->fetch(_PS_MODULE_DIR_ . 'myetickets/views/pdf/custom_template_content.tpl');
+        return $this->smarty->fetch(_PS_MODULE_DIR_ . 'myetickets/views/templates/pdf/custom_template_content.tpl');
     }
 
     public function getLogo()
@@ -68,7 +68,7 @@ class HTMLTemplateMyeticketsPdf extends HTMLTemplate
             'Eticket' => $this->Eticket,
         ));
 
-        return $this->smarty->fetch(_PS_MODULE_DIR_ . 'myetickets/views/pdf/custom_template_logo.tpl');
+        return $this->smarty->fetch(_PS_MODULE_DIR_ . 'myetickets/views/templates/pdf/custom_template_logo.tpl');
     }
 
     public function getHeader()
@@ -77,7 +77,7 @@ class HTMLTemplateMyeticketsPdf extends HTMLTemplate
             'Eticket' => $this->Eticket,
         ));
 
-        return $this->smarty->fetch(_PS_MODULE_DIR_ . 'myetickets/views/pdf/custom_template_header.tpl');
+        return $this->smarty->fetch(_PS_MODULE_DIR_ . 'myetickets/views/templates/pdf/custom_template_header.tpl');
     }
 
     /**
@@ -86,7 +86,7 @@ class HTMLTemplateMyeticketsPdf extends HTMLTemplate
      */
     public function getFooter()
     {
-        return $this->smarty->fetch(_PS_MODULE_DIR_ . 'myetickets/views/pdf/custom_template_footer.tpl');
+        return $this->smarty->fetch(_PS_MODULE_DIR_ . 'myetickets/views/templates/pdf/custom_template_footer.tpl');
     }
 
     /**
