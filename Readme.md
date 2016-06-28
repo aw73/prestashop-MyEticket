@@ -26,14 +26,14 @@ Description des interfaces
 ### Back-office
 
 #### Installation et configuration
-![Installation](https://digitalmeteorit.files.wordpress.com/2016/06/boModuleList.png "Installation")
-![Configuration](https://digitalmeteorit.files.wordpress.com/2016/06/boModuleConfig.png "Configuration")
+![Installation](https://digitalmeteorit.files.wordpress.com/2016/06/bomodulelist.png "Installation")
+![Configuration](https://digitalmeteorit.files.wordpress.com/2016/06/bomoduleconfig.png "Configuration")
 
 #### Définition d'un produit billet électronique
-![Définition d'un produit billet électronique](https://digitalmeteorit.files.wordpress.com/2016/06/boProductEdit.png "Définition d'un produit billet électronique")
+![Définition d'un produit billet électronique](https://digitalmeteorit.files.wordpress.com/2016/06/boproductedit.png "Définition d'un produit billet électronique")
 
 #### Liste des billets électronique d'une commande
-![Liste des billets électronique d'une commande](https://digitalmeteorit.files.wordpress.com/2016/06/boTicketOrder.png "Liste des billets électronique d'une commande")
+![Liste des billets électronique d'une commande](https://digitalmeteorit.files.wordpress.com/2016/06/boticketorder.png "Liste des billets électronique d'une commande")
 
 #### Recherche à partir du code barre
 ![Recherche à partir du code barre](https://digitalmeteorit.files.wordpress.com/2016/06/boean13search.png "Recherche à partir du code barre")
@@ -41,7 +41,7 @@ Description des interfaces
 ### Font-office
 
 #### Mon compte
-![Mon compte](https://digitalmeteorit.files.wordpress.com/2016/06/foMyAccount.png "Mon compte")
+![Mon compte](https://digitalmeteorit.files.wordpress.com/2016/06/fomyaccount.png "Mon compte")
 
 #### Mon compte > Mes billets électroniques
-![Mon compte](https://digitalmeteorit.files.wordpress.com/2016/06/foCustomerETickets.png "Mon compte")
+![Mon compte](https://digitalmeteorit.files.wordpress.com/2016/06/focustomercTickets.png "Mon compte")
